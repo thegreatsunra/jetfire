@@ -1,10 +1,21 @@
 {
-  "name": "jetfire",
-  "version": "0.0.0",
-  "dependencies": {},
-  "engines": {
-    "node": ">=0.10.0"
-  }
+    "name": "jetfire",
+    "description": "Extremely lightweight web prototyping environment",
+    "version": "0.1.0",
+    "author": "Dane Petersen",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thegreatsunra/jetfire.git"
+    },
+    "bugs": {
+        "url": "https://github.com/thegreatsunra/jetfire/issues"
+    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-jshint": "~0.9.2",
@@ -15,4 +26,7 @@
         "time-grunt": "~0.3.1",
         "jshint-stylish": "~0.1.5"
     },
+    "engines": {
+        "node": ">=0.10.0"
+    }
 }
