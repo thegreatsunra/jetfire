@@ -1,4 +1,4 @@
-# jetfire 0.1.2
+# jetfire 0.1.3
 
 Extremely lightweight web prototyping environment. Based on the output of the [Yeoman web app generator](https://github.com/yeoman/generator-webapp) without all the cruft.
 
