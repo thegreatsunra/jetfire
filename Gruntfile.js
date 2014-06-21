@@ -82,6 +82,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
+        'gulpfile.js',
         '<%= config.app %>/scripts/{,*/}*.js',
       ]
     }
