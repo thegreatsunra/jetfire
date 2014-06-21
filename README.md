@@ -2,6 +2,8 @@
 
 Extremely lightweight web prototyping environment. Based on the output of the [Yeoman web app generator](https://github.com/yeoman/generator-webapp) without all the cruft.
 
+Need something heavier duty, perhaps with templates, layouts, partials and LESS? Try [Propeller](https://github.com/thegreatsunra/propeller), jetfire's big brother.
+
 ## Getting started
 
 1. Download and install [Node](http://nodejs.org)
