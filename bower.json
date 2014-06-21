@@ -1,21 +1,21 @@
 {
-    "name": "jetfire",
-    "description": "Extremely lightweight web prototyping environment",
-    "version": "0.1.3",
-    "authors": [
-        "Dane Petersen"
-    ],
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "bootstrap": "~3.1.1",
-        "jquery": "~2.1.1"
-    },
-    "devDependencies": {}
+  "name": "jetfire",
+  "description": "Extremely lightweight web prototyping environment",
+  "version": "0.1.3",
+  "authors": [
+    "Dane Petersen"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "jquery": "~2.1.1"
+  },
+  "devDependencies": {}
 }
