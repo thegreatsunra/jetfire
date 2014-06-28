@@ -1,4 +1,8 @@
-// Generated on 2014-06-20 using generator-webapp 0.4.9
+/* ====================================
+ *  Gruntfile.js
+ *  generated using generator-jetfire v0.1.5
+ * ===================================== */
+
 'use strict';
 
 // # Globbing
