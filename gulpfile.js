@@ -7,58 +7,47 @@
 
 // Load plugins
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint'),
-    watch = require('gulp-watch'),
-    livereload = require('gulp-livereload'),
-    connect = require('gulp-connect'),
-    notify = require('gulp-notify');
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload,
+    plugins = require('gulp-load-plugins')();
 
-gulp.task('connect', function() {
-  connect.server({
-    root: 'app',
-    port: '9000',
-    livereload: true
+// Watch Files For Changes & Reload
+gulp.task('serve', function () {
+  browserSync({
+    notify: false,
+    server: {
+      baseDir: ['.tmp', 'app']
+    }
   });
+
+  gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/styles/**/*.css'], reload);
+  gulp.watch(['app/styles/**/*.less'], ['less']);
+  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/images/**/*'], reload);
 });
 
-gulp.task('reload', function () {
-  gulp.src('./app/*.html')
-    .pipe(connect.reload())
-    .pipe(notify({ message: 'Live reload complete!' }));
-});
-
-gulp.task('watch', function () {
-  gulp.watch([
-    './app/*.html',
-    './app/styles/**/*.{css,less}',
-    './app/scripts/**/*.{js,html}',
-    './app/images/**/*.*'
-  ], ['reload']);
-
-  // Watch .js files
-  gulp.watch([
+// Lint JavaScript
+gulp.task('jshint', function () {
+  return gulp.src([
     'app/scripts/**/*.js',
     'gulpfile.js',
-    'Gruntfile.js'
-    ], ['scripts']);
-
-  // Create LiveReload server
-  var server = livereload();
+    'Gruntfile.js'])
+    .pipe(reload({stream: true, once: true}))
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('jshint-stylish'))
+    .pipe(plugins.notify({ message: 'jshint task complete!' }))
+    .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
-// Scripts
-gulp.task('scripts', function() {
-  return gulp.src([
-      'app/scripts/**/*.js',
-      'gulpfile.js',
-      'Gruntfile.js'
-    ])
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(notify({ message: 'Scripts task complete!' }));
+// Compile LESS files
+gulp.task('less', function () {
+  gulp.src('app/styles/**/*.less')
+    .pipe(plugins.less())
+    .pipe(gulp.dest('app/styles'));
 });
 
 // Default task
-gulp.task('default', ['connect', 'watch'], function() {
-    gulp.start('scripts');
+gulp.task('default', ['serve'], function() {
+    gulp.start(['jshint', 'less']);
 });
