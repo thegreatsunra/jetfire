@@ -1,6 +1,6 @@
 /* ====================================
  *  gulpfile.js
- *  generated using generator-jetfire v0.1.5
+ *  generated using generator-jetfire v0.1.6
  * ===================================== */
 
 'use strict';
