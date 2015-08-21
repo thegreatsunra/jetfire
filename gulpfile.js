@@ -32,7 +32,6 @@ gulp.task('jshint', function () {
   return gulp.src([
     'app/scripts/**/*.js',
     'gulpfile.js',
-    'Gruntfile.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'))
