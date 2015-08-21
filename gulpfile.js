@@ -30,8 +30,8 @@ gulp.task('serve', function () {
 // Lint JavaScript
 gulp.task('jshint', function () {
   return gulp.src([
-    'app/scripts/**/*.js',
-    'gulpfile.js',
+    './app/scripts/**/*.js',
+    './gulpfile.js'])
     .pipe(reload({stream: true, once: true}))
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('jshint-stylish'))
@@ -41,8 +41,8 @@ gulp.task('jshint', function () {
 
 // Compile Sass files
 gulp.task('sass', function () {
-  gulp.src('app/styles/**/*.scss')
     .pipe(plugins.sass().on('error', plugins.sass.logError))
+  gulp.src('./app/styles/**/*.scss')
     .pipe(gulp.dest('app/styles'));
 });
 
