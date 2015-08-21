@@ -22,7 +22,7 @@ gulp.task('serve', function () {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.css'], reload);
-  gulp.watch(['app/styles/**/*.less'], ['less']);
+  gulp.watch(['app/styles/**/*.scss'], ['sass']);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
@@ -40,14 +40,14 @@ gulp.task('jshint', function () {
     .pipe(plugins.if(!browserSync.active, plugins.jshint.reporter('fail')));
 });
 
-// Compile LESS files
-gulp.task('less', function () {
-  gulp.src('app/styles/**/*.less')
-    .pipe(plugins.less())
+// Compile Sass files
+gulp.task('sass', function () {
+  gulp.src('app/styles/**/*.scss')
+    .pipe(plugins.sass().on('error', plugins.sass.logError))
     .pipe(gulp.dest('app/styles'));
 });
 
 // Default task
 gulp.task('default', ['serve'], function() {
-    gulp.start(['jshint', 'less']);
+    gulp.start(['jshint', 'sass']);
 });
