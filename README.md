@@ -1,4 +1,4 @@
-# jetfire 0.1.6
+# jetfire 0.2.0
 
 Extremely lightweight web prototyping environment.
 
