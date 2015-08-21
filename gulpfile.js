@@ -43,7 +43,8 @@ gulp.task('sass', function () {
   gulp.src('./app/styles/**/*.scss')
     .pipe(plugins.sass(
       {
-        includePaths: ['./app/bower_components/']
+        includePaths: ['./app/bower_components/'],
+        outputStyle: 'nested'
       }
     ).on('error', plugins.sass.logError))
     .pipe(gulp.dest('app/styles'));
