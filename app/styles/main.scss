@@ -2,12 +2,12 @@
  *  main.scss
  * ===================================== */
 
-@import "../bower_components/inuit-defaults/settings.defaults";
+@import "inuit-defaults/settings.defaults";
 
-@import "../bower_components/inuit-functions/tools.functions";
-@import "../bower_components/inuit-mixins/tools.mixins";
+@import "inuit-functions/tools.functions";
+@import "inuit-mixins/tools.mixins";
 
-@import "../bower_components/inuit-normalize/generic.normalize";
-@import "../bower_components/inuit-box-sizing/generic.box-sizing";
+@import "inuit-normalize/generic.normalize";
+@import "inuit-box-sizing/generic.box-sizing";
 
-@import "../bower_components/inuit-page/base.page";
+@import "inuit-page/base.page";

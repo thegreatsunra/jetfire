@@ -41,8 +41,12 @@ gulp.task('jshint', function () {
 
 // Compile Sass files
 gulp.task('sass', function () {
-    .pipe(plugins.sass().on('error', plugins.sass.logError))
   gulp.src('./app/styles/**/*.scss')
+    .pipe(plugins.sass(
+      {
+        includePaths: ['./app/bower_components/']
+      }
+    ).on('error', plugins.sass.logError))
     .pipe(gulp.dest('app/styles'));
 });
 
