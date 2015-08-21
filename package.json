@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "browser-sync": "^2.8.0",
-    "gulp": "^3.8.0",
+    "gulp": "^3.9.0",
     "gulp-if": "^1.2.0",
-    "gulp-jshint": "^1.8.0",
+    "gulp-jshint": "^1.11.0",
     "gulp-load-plugins": "^0.10.0",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.4",
