@@ -1,8 +1,6 @@
 # jetfire 0.1.6
 
-Extremely lightweight web prototyping environment. Based on the output of the [Yeoman web app generator](https://github.com/yeoman/generator-webapp) without all the cruft.
-
-Need something heavier duty, perhaps with templates, layouts, partials and LESS? Try [Propeller](https://github.com/thegreatsunra/propeller), jetfire's big brother.
+Extremely lightweight web prototyping environment.
 
 ## Getting started
 
@@ -17,14 +15,6 @@ Need something heavier duty, perhaps with templates, layouts, partials and LESS?
 1. Type `gulp` to start your development server. jetfire will monitor the `/app` folder, refresh your browser whenever it detects changes, and automatically lint all your JavaScript files
 1. Open [http://localhost:9000](http://localhost:9000) in a web browser to view your site
 1. Modify the files in the `/app` folder to build your prototype
-
-### A note about Gulp vs. Grunt
-
-jetfire includes support for both [Gulp](http://gulpjs.com) as well as [Grunt](http://gruntjs.com) for starting the development server and monitoring for changes. If it's all the same to you, we recommend you use Gulp because it's much faster.
-
-If you prefer to use Grunt, make sure you have it installed globally by typing `sudo npm install -g grunt-cli` at the command line. After that, simply type `grunt` from your project folder instead of `gulp`, and Grunt will start up your development server.
-
-All the Grunt tasks for jetfire are defined in the Gruntfile.js file. Likewise, all the Gulp tasks are defined in the `gulpfile.js` file.
 
 ## License
 
